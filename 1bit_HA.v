@@ -1,7 +1,8 @@
-module 1bit_HA(A, B, Sum, Cout);
+module 1bit_HA(
     input A, B;
     output Sum;
     output Cout;
+);
 
     assign Sum = A ^ B;
     assign Cout = A & B;
