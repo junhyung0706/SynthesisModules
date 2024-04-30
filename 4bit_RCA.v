@@ -3,7 +3,7 @@ module 4bit_RCA(
     input Cin,
     output [3:0] Sum,
     output Cout
-)
+);
 
     wire Carry1, Carry2, Carry3;
 
