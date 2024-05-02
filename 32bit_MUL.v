@@ -6,6 +6,7 @@ module 32bit_MUL(
 
 wire a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15;
 wire b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15;
+wire c1, c2, c3, c4, c5, c6, c7, c8, c9, c10, c11, c12, c13, c14, c15;
 
 //              a&b,       Sin, Cin, Sout, Cout
 1bit_FA FA00(A[0] & B[0], 1'b0, 1'b0, Y[0], a1); //A[0]*B[0]을 수행하는 FA
@@ -26,8 +27,15 @@ wire b1, b2, b3, b4, b5, b6, b7, b8, b9, b10, b11, b12, b13, b14, b15;
 1bit_FA FA16(A[1]& B[6], a14, a13, b12, b13);
 1bit_FA FA17(A[1]& B[7], 1'b0, a14, b14, b15);
 
-
-
+1bit_FA FA20(A[2]& B[0], b2, b1, Y[2], c1);
+1bit_FA FA21(A[2]& B[1], b4, b3, c2, c3);
+1bit_FA FA22(A[2]& B[2], b6, b5, c4, c5);
+1bit_FA FA23(A[2]& B[3], b8 ,b7, c6, c7);
+1bit_FA FA24(A[2]& B[4], b10, b9, c8, c9);
+1bit_FA FA25(A[2]& B[5], b12, b11, c10, c11);
+1bit_FA FA26(A[2]& B[6], b14, b13, c12, c13);
+1bit_FA FA27(A[2]& B[7], 1'b0, b14, c14, c15);
+ 
 
 
 
