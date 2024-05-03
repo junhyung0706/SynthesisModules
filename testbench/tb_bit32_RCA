@@ -1,0 +1,22 @@
+`timescale 1ns / 1ps
+
+module tb_bit32_RCA;
+    reg [31:0] A, B;
+    reg Cin;
+    wire [31:0] Sum;
+    wire Cout;
+    
+    bit32_RCA RCA(A,B,Cin,Sum,Cout);
+    
+    initial begin
+        A = 32'd0; B = 32'd0; Cin = 0;
+        #10;
+        A = 32'd8; B = 32'd9; Cin = 0;
+        #10
+        A = 32'd33; B = 32'd66; Cin = 1;
+        #10
+        A = 32'b11111111_11111111_11111111_11111110;
+        B = 32'b00000000_00000000_00000000_00000010;
+        Cin = 0;
+    end
+endmodule
