@@ -1,3 +1,4 @@
+
 module Top(
     input clk, nRST,
     input [31:0] A,
@@ -9,10 +10,10 @@ module Top(
 wire [31:0] w1, w2, w3, w4;
 wire [39:0] wireA, wireB;
 wire [39:0] wireFinal;
+wire C_out;
 
   
 /*
-모듈 인스턴스화는 6가지 경우에 따라 적절하게 불러올 것.
 MyModuleA moduleA(
     .A(w1),
     .B(w3),
@@ -30,6 +31,23 @@ MyModuleB moduleB(
 );
 
 */
+//Comb 1
+bit32_RCA moduleA(
+    .A(w1),
+    .B(w3),
+    .Cin(0),
+    .Sum(wireA),
+    .Cout(C_out)
+);
+
+bit32_RCA moduleB(
+    .A(w2),
+    .B(w4),
+    .Cin(0),
+    .Sum(wireB),
+    .Cout(C_out)
+);
+//
 
 always @(posedge clk or negedge nRST) begin
     if (!nRST) begin
@@ -46,9 +64,9 @@ always @(posedge clk or negedge nRST) begin
     end
 end
 
-//Sel = 1 : 모듈A 선택
-//Sel = 0 : 모듈B 선택
-assign wireFinal = Sel ? MyModuleA : MyModuleB;
+//Sel = 1 : A
+//Sel = 0 : B
+assign wireFinal = Sel ? wireA : wireB;
 
 always@(posedge clk or negedge nRST) begin
     if (!nRST) begin
