@@ -298,12 +298,12 @@ bit1_FA FA31_7(A[31]& B[7], 1'b0, w31[14], w32[13], w32[14]);
 
 //마지막 줄의 모듈들
 bit1_FA FA0(w32[1], w32[0], 1'b0, Y[32], LastCarry[0]);
-bit1_FA FA0(w32[3], w32[2], LastCarry[0], Y[33], LastCarry[1]);
-bit1_FA FA0(w32[5], w32[4], LastCarry[1], Y[34], LastCarry[2]);
-bit1_FA FA0(w32[7], w32[6], LastCarry[2], Y[35], LastCarry[3]);
-bit1_FA FA0(w32[9], w32[8], LastCarry[3], Y[36], LastCarry[4]);
-bit1_FA FA0(w32[11], w32[10], LastCarry[4], Y[37], LastCarry[5]);
-bit1_FA FA0(w32[13], w32[12], LastCarry[5], Y[38], LastCarry[6]);
-bit1_FA FA0(1'b0, w32[14], LastCarry[6], Y[39], LastCarry[7]);
+bit1_FA FA1(w32[3], w32[2], LastCarry[0], Y[33], LastCarry[1]);
+bit1_FA FA2(w32[5], w32[4], LastCarry[1], Y[34], LastCarry[2]);
+bit1_FA FA3(w32[7], w32[6], LastCarry[2], Y[35], LastCarry[3]);
+bit1_FA FA4(w32[9], w32[8], LastCarry[3], Y[36], LastCarry[4]);
+bit1_FA FA5(w32[11], w32[10], LastCarry[4], Y[37], LastCarry[5]);
+bit1_FA FA6(w32[13], w32[12], LastCarry[5], Y[38], LastCarry[6]);
+bit1_FA FA7(1'b0, w32[14], LastCarry[6], Y[39], LastCarry[7]);
 
 endmodule
