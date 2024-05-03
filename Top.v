@@ -33,7 +33,7 @@ MyModuleB moduleB(
 );
 
 */
-//Comb 1
+//Comb 1////////////////////////////
 bit32_RCA moduleA(
     .A(w1),
     .B(w3),
@@ -49,7 +49,7 @@ bit32_RCA moduleB(
     .Sum(wireB),
     .Cout(C_out)
 );
-//
+/////////////////////////////////////
 
 always @(posedge clk or negedge nRST) begin
     if (!nRST) begin
