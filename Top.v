@@ -1,13 +1,15 @@
+`timescale 1ns / 1ps
+
 
 module Top(
     input clk, nRST,
     input [31:0] A,
     input [31:0] B,
     input Sel,
-    output [39:0] Result
+    output reg [39:0] Result
 );
 
-wire [31:0] w1, w2, w3, w4;
+reg [31:0] w1, w2, w3, w4;
 wire [39:0] wireA, wireB;
 wire [39:0] wireFinal;
 wire C_out;
