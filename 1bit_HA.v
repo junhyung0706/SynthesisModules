@@ -1,4 +1,4 @@
-module 1bit_HA(
+module bit1_HA(
     input A, B,
     output Sum,
     output Cout
