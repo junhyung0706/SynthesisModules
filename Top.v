@@ -53,10 +53,10 @@ bit32_RCA moduleB(
 
 always @(posedge clk or negedge nRST) begin
     if (!nRST) begin
-        w1 <= 31'b0;
-        w2 <= 31'b0;
-        w3 <= 31'b0;
-        w4 <= 31'b0;
+        w1 <= 32'b0;
+        w2 <= 32'b0;
+        w3 <= 32'b0;
+        w4 <= 32'b0;
     end
     else begin
         w1 <= A;
