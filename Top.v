@@ -12,34 +12,15 @@ module Top(
 reg [31:0] w1, w2, w3, w4;
 wire [39:0] wireA, wireB;
 wire [39:0] wireFinal;
-wire C_out;
+wire CoutA, CoutB;
 
-  
-/*
-MyModuleA moduleA(
-    .A(w1),
-    .B(w3),
-    .Cin(0),
-    .Sum(wireA),
-    .Cout()
-);
-
-MyModuleB moduleB(
-    .A(w2),
-    .B(w4),
-    .Cin(0),
-    .Sum(wireB),
-    .Cout()
-);
-
-*/
-//Comb 1////////////////////////////
+//Combination 1
 bit32_RCA moduleA(
     .A(w1),
     .B(w3),
     .Cin(0),
     .Sum(wireA),
-    .Cout(C_out)
+    .Cout(CoutA)
 );
 
 bit32_RCA moduleB(
@@ -47,16 +28,106 @@ bit32_RCA moduleB(
     .B(w4),
     .Cin(0),
     .Sum(wireB),
-    .Cout(C_out)
+    .Cout(CoutB)
 );
-/////////////////////////////////////
+//
+
+/*Combination 2
+bit32_CSA moduleA(
+    .A(w1),
+    .B(w3),
+    .Cin(0),
+    .Sum(wireA),
+    .Cout(CoutA)
+);
+
+bit32_CSA moduleB(
+    .A(w2),
+    .B(w4),
+    .Cin(0),
+    .Sum(wireB),
+    .Cout(CoutB)
+);
+*/
+
+/*Combination 3
+bit32_MUL moduleA(
+    .A(w1),
+    .B(w3),
+    .Cin(0),
+    .Sum(wireA),
+    .Cout(CoutA)
+);
+
+bit32_MUL moduleB(
+    .A(w2),
+    .B(w4),
+    .Cin(0),
+    .Sum(wireB),
+    .Cout(CoutB)
+);
+*/
+
+/*Combination 4
+bit32_RCA moduleA(
+    .A(w1),
+    .B(w3),
+    .Cin(0),
+    .Sum(wireA),
+    .Cout(CoutA)
+);
+
+bit32_CSA moduleB(
+    .A(w2),
+    .B(w4),
+    .Cin(0),
+    .Sum(wireB),
+    .Cout(CoutB)
+);
+*/
+
+/*Combination 5
+bit32_RCA moduleA(
+    .A(w1),
+    .B(w3),
+    .Cin(0),
+    .Sum(wireA),
+    .Cout(CoutA)
+);
+
+bit32_MUL moduleB(
+    .A(w2),
+    .B(w4),
+    .Cin(0),
+    .Sum(wireB),
+    .Cout(CoutB)
+);
+*/
+
+/*Combination 6
+bit32_CSA moduleA(
+    .A(w1),
+    .B(w3),
+    .Cin(0),
+    .Sum(wireA),
+    .Cout(CoutA)
+);
+
+bit32_MUL moduleB(
+    .A(w2),
+    .B(w4),
+    .Cin(0),
+    .Sum(wireB),
+    .Cout(CoutB)
+);
+*/
 
 always @(posedge clk or negedge nRST) begin
     if (!nRST) begin
-        w1 <= 32'b0;
-        w2 <= 32'b0;
-        w3 <= 32'b0;
-        w4 <= 32'b0;
+        w1 <= 31'b0;
+        w2 <= 31'b0;
+        w3 <= 31'b0;
+        w4 <= 31'b0;
     end
     else begin
         w1 <= A;
