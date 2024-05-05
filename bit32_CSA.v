@@ -1,7 +1,9 @@
+`timescale 1ns / 1ps
+
 module bit32_CSA(
     input [31:0] A, B,
     input Cin,
-    output [31:0] Sum,
+    output [39:0] Sum,
     output Cout
 );
 
@@ -48,4 +50,5 @@ module bit32_CSA(
     assign Sum[27:24] = Carry[5] ? Sum1[27:24] : Sum0[27:24];
     assign Sum[31:28] = Carry[6] ? Sum1[31:28] : Sum0[31:28];
 
+    assign Sum[39:32] = 8'b0000_0000;
 endmodule
