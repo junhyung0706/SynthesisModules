@@ -53,17 +53,13 @@ wire CoutA, CoutB;
 //bit32_MUL moduleA(
 //    .A(w1),
 //    .B(w3),
-//    .Cin(0),
-//    .Sum(wireA),
-//    .Cout(CoutA)
+//    .Y(wireA)
 //);
 
 //bit32_MUL moduleB(
 //    .A(w2),
 //    .B(w4),
-//    .Cin(0),
-//    .Sum(wireB),
-//    .Cout(CoutB)
+//    .Y(wireB)
 //);
 
 
@@ -97,28 +93,24 @@ wire CoutA, CoutB;
 //bit32_MUL moduleB(
 //    .A(w2),
 //    .B(w4),
-//    .Cin(0),
-//    .Sum(wireB),
-//    .Cout(CoutB)
+//    .Y(wireB)
 //);
 
 
-////Combination 6
-//bit32_CSA moduleA(
-//    .A(w1),
-//    .B(w3),
-//    .Cin(0),
-//    .Sum(wireA),
-//    .Cout(CoutA)
-//);
+//Combination 6
+bit32_CSA moduleA(
+    .A(w1),
+    .B(w3),
+    .Cin(0),
+    .Sum(wireA),
+    .Cout(CoutA)
+);
 
-//bit32_MUL moduleB(
-//    .A(w2),
-//    .B(w4),
-//    .Cin(0),
-//    .Sum(wireB),
-//    .Cout(CoutB)
-//);
+bit32_MUL moduleB(
+    .A(w2),
+    .B(w4),
+    .Y(wireB)
+);
 
 
 always @(posedge clk or negedge nRST) begin
