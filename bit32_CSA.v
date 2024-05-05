@@ -50,5 +50,6 @@ module bit32_CSA(
     assign Sum[27:24] = Carry[5] ? Sum1[27:24] : Sum0[27:24];
     assign Sum[31:28] = Carry[6] ? Sum1[31:28] : Sum0[31:28];
 
-    assign Sum[39:32] = 8'b0000_0000;
+    assign Sum[32] = Cout;
+    assign Sum[39:33] = 7'b0000_000;
 endmodule
