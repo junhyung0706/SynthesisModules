@@ -4,7 +4,9 @@ input [7:0] B,
 output [39:0] Y
 );
 
-wire [14:0] w1,w2,w3,w4,w5,w6,w7,w8,w9,w10,w11,w12,w13,w14,w15,w16,w17,w18,w19,w20,w21,w22,w23,w24,w25,w26,w27,w28,w29,w30,w31,w32;
+wire [14:0] w1,w2,w3,w4,w5,w6,w7,w8,w9,w10;
+wire [14:0] w11,w12,w13,w14,w15,w16,w17,w18,w19,w20;
+wire [14:0] w21,w22,w23,w24,w25,w26,w27,w28,w29,w30,w31,w32;
 wire [7:0] LastCarry;
 
 //              a&b,       Sin, Cin, Sout, Cout
