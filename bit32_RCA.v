@@ -9,6 +9,7 @@ module bit32_RCA(
 
     wire Carry1, Carry2, Carry3, Carry4, Carry5, Carry6, Carry7;
 
+    // 8개의 4비트 RCA모듈을 인스턴스화 
     bit4_RCA RCA0(A[3:0], B[3:0], Cin, Sum[3:0], Carry1);
     bit4_RCA RCA1(A[7:4], B[7:4], Carry1, Sum[7:4], Carry2);
     bit4_RCA RCA2(A[11:8], B[11:8], Carry2, Sum[11:8], Carry3);
