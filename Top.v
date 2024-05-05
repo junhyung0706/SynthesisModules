@@ -1,6 +1,5 @@
 `timescale 1ns / 1ps
 
-
 module Top(
     input clk, nRST,
     input [31:0] A,
@@ -14,113 +13,113 @@ wire [39:0] wireA, wireB;
 wire [39:0] wireFinal;
 wire CoutA, CoutB;
 
-//Combination 1
-bit32_RCA moduleA(
-    .A(w1),
-    .B(w3),
-    .Cin(0),
-    .Sum(wireA),
-    .Cout(CoutA)
-);
+////Combination 1
+//bit32_RCA moduleA(
+//    .A(w1),
+//    .B(w3),
+//    .Cin(0),
+//    .Sum(wireA),
+//    .Cout(CoutA)
+//);
 
-bit32_RCA moduleB(
-    .A(w2),
-    .B(w4),
-    .Cin(0),
-    .Sum(wireB),
-    .Cout(CoutB)
-);
-//
+//bit32_RCA moduleB(
+//    .A(w2),
+//    .B(w4),
+//    .Cin(0),
+//    .Sum(wireB),
+//    .Cout(CoutB)
+//);
 
-/*Combination 2
-bit32_CSA moduleA(
-    .A(w1),
-    .B(w3),
-    .Cin(0),
-    .Sum(wireA),
-    .Cout(CoutA)
-);
 
-bit32_CSA moduleB(
-    .A(w2),
-    .B(w4),
-    .Cin(0),
-    .Sum(wireB),
-    .Cout(CoutB)
-);
-*/
+////Combination 2
+//bit32_CSA moduleA(
+//    .A(w1),
+//    .B(w3),
+//    .Cin(0),
+//    .Sum(wireA),
+//    .Cout(CoutA)
+//);
 
-/*Combination 3
-bit32_MUL moduleA(
-    .A(w1),
-    .B(w3),
-    .Cin(0),
-    .Sum(wireA),
-    .Cout(CoutA)
-);
+//bit32_CSA moduleB(
+//    .A(w2),
+//    .B(w4),
+//    .Cin(0),
+//    .Sum(wireB),
+//    .Cout(CoutB)
+//);
 
-bit32_MUL moduleB(
-    .A(w2),
-    .B(w4),
-    .Cin(0),
-    .Sum(wireB),
-    .Cout(CoutB)
-);
-*/
 
-/*Combination 4
-bit32_RCA moduleA(
-    .A(w1),
-    .B(w3),
-    .Cin(0),
-    .Sum(wireA),
-    .Cout(CoutA)
-);
+////Combination 3
+//bit32_MUL moduleA(
+//    .A(w1),
+//    .B(w3),
+//    .Cin(0),
+//    .Sum(wireA),
+//    .Cout(CoutA)
+//);
 
-bit32_CSA moduleB(
-    .A(w2),
-    .B(w4),
-    .Cin(0),
-    .Sum(wireB),
-    .Cout(CoutB)
-);
-*/
+//bit32_MUL moduleB(
+//    .A(w2),
+//    .B(w4),
+//    .Cin(0),
+//    .Sum(wireB),
+//    .Cout(CoutB)
+//);
 
-/*Combination 5
-bit32_RCA moduleA(
-    .A(w1),
-    .B(w3),
-    .Cin(0),
-    .Sum(wireA),
-    .Cout(CoutA)
-);
 
-bit32_MUL moduleB(
-    .A(w2),
-    .B(w4),
-    .Cin(0),
-    .Sum(wireB),
-    .Cout(CoutB)
-);
-*/
+////Combination 4
+//bit32_RCA moduleA(
+//    .A(w1),
+//    .B(w3),
+//    .Cin(0),
+//    .Sum(wireA),
+//    .Cout(CoutA)
+//);
 
-/*Combination 6
-bit32_CSA moduleA(
-    .A(w1),
-    .B(w3),
-    .Cin(0),
-    .Sum(wireA),
-    .Cout(CoutA)
-);
+//bit32_CSA moduleB(
+//    .A(w2),
+//    .B(w4),
+//    .Cin(0),
+//    .Sum(wireB),
+//    .Cout(CoutB)
+//);
 
-bit32_MUL moduleB(
-    .A(w2),
-    .B(w4),
-    .Cin(0),
-    .Sum(wireB),
-    .Cout(CoutB)
-);
-*/
+
+////Combination 5
+//bit32_RCA moduleA(
+//    .A(w1),
+//    .B(w3),
+//    .Cin(0),
+//    .Sum(wireA),
+//    .Cout(CoutA)
+//);
+
+//bit32_MUL moduleB(
+//    .A(w2),
+//    .B(w4),
+//    .Cin(0),
+//    .Sum(wireB),
+//    .Cout(CoutB)
+//);
+
+
+////Combination 6
+//bit32_CSA moduleA(
+//    .A(w1),
+//    .B(w3),
+//    .Cin(0),
+//    .Sum(wireA),
+//    .Cout(CoutA)
+//);
+
+//bit32_MUL moduleB(
+//    .A(w2),
+//    .B(w4),
+//    .Cin(0),
+//    .Sum(wireB),
+//    .Cout(CoutB)
+//);
+
 
 always @(posedge clk or negedge nRST) begin
     if (!nRST) begin
