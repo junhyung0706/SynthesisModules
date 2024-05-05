@@ -1,7 +1,9 @@
+`timescale 1ns / 1ps
+
 module bit32_RCA(
     input [31:0] A, B,
     input Cin,
-    output [31:0] Sum,
+    output [39:0] Sum,
     output Cout
 );
 
@@ -15,5 +17,6 @@ module bit32_RCA(
     bit4_RCA RCA5(A[23:20], B[23:20], Carry5, Sum[23:20], Carry6);
     bit4_RCA RCA6(A[27:24], B[27:24], Carry6, Sum[27:24], Carry7);
     bit4_RCA RCA7(A[31:28], B[31:28], Carry7, Sum[31:28], Cout);
+    assign Sum[39:32] = 8'b0000_0000;
 
 endmodule
