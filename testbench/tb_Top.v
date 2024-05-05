@@ -10,22 +10,24 @@ module tb_Top;
     
     initial begin
         clk = 0;
-        forever #5 clk = ~clk;  // 10 ns 주기로 클록 반전
+        forever #10 clk = ~clk;
     end
     
     initial begin
-        nRST = 0;
-        #20;
-        nRST = 1;
+        nRST <= 0;
+        #10;
+        nRST <= 1;
         Sel = 0;
-        A = 0;
-        B = 0;
-        #20
-        A = 10; B = 20;
-        #20;
-        Sel = 1;
-        A = 99; B = 1;
+        A <= 0;
+        B <= 0;
+        #30
+        A <= 10; B <= 20;
         #30;
+        Sel <= 1;
+        A <= 99; B <= 2;
+        #30
+        A <= 80; B <= 90;
+        #100;
         $finish;
     end
 endmodule
