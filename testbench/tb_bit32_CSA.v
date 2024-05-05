@@ -1,9 +1,10 @@
 `timescale 1ns / 1ps
 
+
 module tb_bit32_CSA;
     reg [31:0] A, B;
     reg Cin;
-    wire [31:0] Sum;
+    wire [39:0] Sum;
     wire Cout;
     
     bit32_CSA CSA(A, B, Cin, Sum, Cout);
